@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WHEELIE AUTODETAILERS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FFD700;
+      --dark-bg: #0f0f1a;
+      --card-bg: #1c1c2e;
+      --accent: #00ffc8;
+      --text-light: #f5f5f5;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      background: #0a0a13cc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+    nav a {
+      color: var(--text-light);
+      margin-left: 2rem;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1634531523059-5f4b8c15c3c3?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero h2 {
+      font-size: 3.5rem;
+      z-index: 2;
+      color: var(--primary);
+      animation: slideUp 1.5s ease-out;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: var(--glass);
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background: var(--card-bg);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .card p, .card .price {
+      color: #ccc;
+    }
+    .card .price {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+    .appointment {
+      background: var(--card-bg);
+      padding: 4rem 2rem;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, select, textarea {
+      padding: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #2e2e44;
+      color: #fff;
+    }
+    select[multiple] {
+      height: 100px;
+    }
+    button {
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      background: #00ddb0;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    footer {
+      background: #0f0f0f;
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(60px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  
+.card, nav a, button, h2, h3 {
+  transition: all 0.4s ease-in-out;
+}
+.card:hover h3 {
+  transform: scale(1.05);
+  color: var(--primary);
+}
+h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.card p, .card .price {
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>WHEELIE AUTODETAILERS</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#appointment">Appointment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Drive Clean. Drive Confident.</h2>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <!-- Service cards will be injected here -->
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <h2>Why Choose Us?</h2>
+    <ul style="max-width: 700px; margin: auto; list-style: none; padding: 0;">
+      <li>• Mobile service saves you time—detailing done at your doorstep.</li>
+      <li>• Eco-conscious cleaning using premium, safe products.</li>
+      <li>• Competitive pricing optimized for top notch services.</li>
+      <li>• Trained professionals delivering consistent, quality finishes.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>At WHEELIE AUTODETAILERS, we deliver precision automotive detailing designed for perfection. From standard washes to full ceramic packages, we cater to both Sedans and SUVs with tailored pricing and care.</p>
+  </section>
+
+  <section class="appointment" id="appointment">
+    <h2>Book an Appointment</h2>
+    <!-- Formspree: auto-redirect after submission to thank-you page -->
+    <form action="https://formspree.io/f/mqkrbjvl" method="POST" onsubmit="return handleRedirect(event)">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <select name="services[]" multiple required>
+        <option value="Basic Wash">Basic Wash</option>
+        <option value="Exterior Detailing">Exterior Detailing</option>
+        <option value="Interior Spa">Interior Spa</option>
+        <option value="Engine Bay Cleaning">Engine Bay Cleaning</option>
+        <option value="Premium Detailing">Premium Detailing</option>
+        <option value="Monthly Plan">Monthly Plan</option>
+      </select>
+      <select name="vehicle" required>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+      </select>
+      <textarea name="notes" rows="4" placeholder="Additional Notes"></textarea>
+      <select name="payment" required>
+        <option value="">Select Payment Method</option>
+        <option value="M-Pesa">M-Pesa</option>
+        <option value="Visa">Visa</option>
+        <option value="Skrill">Skrill</option>
+        <option value="Airtel Money">Airtel Money</option>
+        <option value="Cash">Cash</option>
+      </select>
+      <div id="mapContainer">Detecting location...</div>
+      <button type="submit">Confirm Booking</button>
+    </form>
+    <iframe id="mapFrame" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@wheeliedetailers.co.ke | Phone: +2547-066-270-41</p>
+    <p>Location: Nairobi, Kenya</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 WHEELIE AUTODETAILERS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Handle redirect after form submission using Formspree
+    function handleRedirect(event) {
+      // Small delay to ensure Formspree processes submission
+      setTimeout(() => {
+        window.location.href = "thank-you.html"; // Create a thank-you.html in your repo
+      }, 300);
+      return true;
+    }
+
+    // Load Google Maps with user geolocation
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
+          const map = document.getElementById("mapFrame");
+          const mapKey = "AIzaSyD...REPLACE_THIS_WITH_YOURS"; // Replace with your real API Key
+          map.src = `https://www.google.com/maps/embed/v1/view?key=${mapKey}&center=${lat},${lng}&zoom=14`;
+        },
+        function() {
+          document.getElementById("mapContainer").innerText = "Unable to load map.";
+        }
+      );
+    } else {
+      document.getElementById("mapContainer").innerText = "Geolocation is not supported by this browser.";
+    }
+  </script>
+
+<script>
+  const servicePrices = {
+    "Basic Wash": { Sedan: 5000, SUV: 7000 },
+    "Exterior Detailing": { Sedan: 15000, SUV: 18000 },
+    "Interior Spa": { Sedan: 12000, SUV: 15000 },
+    "Engine Bay Cleaning": { Sedan: 8000, SUV: 10000 },
+    "Premium Detailing": { Sedan: 30000, SUV: 35000 },
+    "Monthly Plan": { Sedan: 85000, SUV: 100000 }
+  };
+
+  const servicesSelect = document.querySelector('select[name="services[]"]');
+  const vehicleSelect = document.querySelector('select[name="vehicle"]');
+
+  const checkoutDiv = document.createElement("div");
+  checkoutDiv.style.marginTop = "1rem";
+  checkoutDiv.style.padding = "1rem";
+  checkoutDiv.style.background = "#2e2e44";
+  checkoutDiv.style.borderRadius = "8px";
+  checkoutDiv.style.color = "#fff";
+  checkoutDiv.innerHTML = "<strong>Total: KES <span id='totalPrice'>0</span></strong>";
+  document.querySelector("form").appendChild(checkoutDiv);
+
+  function updatePrice() {
+    const selectedServices = Array.from(servicesSelect.selectedOptions).map(opt => opt.value);
+    const vehicle = vehicleSelect.value;
+    let total = 0;
+    selectedServices.forEach(service => {
+      if (servicePrices[service] && servicePrices[service][vehicle]) {
+        total += servicePrices[service][vehicle];
+      }
+    });
+    document.getElementById("totalPrice").textContent = total;
+  }
+
+  servicesSelect.addEventListener("change", updatePrice);
+  vehicleSelect.addEventListener("change", updatePrice);
+</script>
+
+</body>
+</html
